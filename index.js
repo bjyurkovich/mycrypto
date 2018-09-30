@@ -18,10 +18,10 @@ app.set("x-powered-by", false);
 app.use(morgan("common"));
 app.use(cors());
 app.use(bodyParser.json());
-app.use("/", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 app.use("/v1", apiV1);
 app.use(favicon(path.join(__dirname, "public", "favicon.ico")));
+app.use("/", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app.use(errors);
 
 const port = process.env.PORT || 9900;
