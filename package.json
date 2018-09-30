@@ -24,6 +24,7 @@
     "morgan": "^1.9.1",
     "openpgp": "^4.1.0",
     "serve-favicon": "^2.5.0",
+    "swagger-ui-express": "^4.0.1",
     "uuid": "^3.3.2"
   },
   "engines": {

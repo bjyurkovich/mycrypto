@@ -1,0 +1,210 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Crypto",
+    "license": {
+      "name": "MIT"
+    }
+  },
+  "host": "bjcrypto.herokuapp.com",
+  "basePath": "/v1",
+  "schemes": ["https"],
+  "consumes": ["application/json"],
+  "produces": ["application/json"],
+  "description": "Encryption Tests and Helpers",
+  "paths": {
+    "/aes-test": {
+      "post": {
+        "summary": "Performs AES-256 Encryption",
+        "parameters": [
+          {
+            "in": "body",
+            "description": "Text to be encrypted",
+            "name": "aes256",
+            "schema": {
+              "required": ["text", "key"],
+              "type": "object",
+              "properties": {
+                "text": {
+                  "type": "string"
+                },
+                "key": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Encryption Informatiom",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "encrypted": { "type": "string" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/rsa-create-certificates": {
+      "post": {
+        "summary": "Creates RSA Certificates of a specified length",
+        "parameters": [
+          {
+            "in": "body",
+            "description": "RSA Information",
+            "name": "createRsaCertificate",
+            "schema": {
+              "required": ["id", "passphrase", "keySize"],
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "description": "Name on the certificate"
+                },
+                "passphrase": {
+                  "type": "string",
+                  "description": "Passphrase to secure the certificate"
+                },
+                "keySize": {
+                  "type": "integer",
+                  "description": "Size of the key",
+                  "minimum": 700,
+                  "default": 700
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Encryption Informatiom",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "encrypted": { "type": "string" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/rsa-get-public-certificate/{id}": {
+      "get": {
+        "summary": "Retrieves public certificate",
+        "parameters": [
+          {
+            "in": "path",
+            "description": "RSA Public Key",
+            "name": "id",
+            "schema": {
+              "required": true,
+              "type": "path",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "description": "ID from certification creation"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Encryption Informatiom",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "encrypted": { "type": "string" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/rsa-get-private-certificate/{id}": {
+      "get": {
+        "summary": "Retrieves private certificate",
+        "parameters": [
+          {
+            "in": "path",
+            "description": "RSA Private Key",
+            "name": "id",
+            "schema": {
+              "required": true,
+              "type": "path",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "description": "ID from certification creation"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Encryption Informatiom",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "encrypted": { "type": "string" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/rsa-encrypt/{id}": {
+      "post": {
+        "summary": "Encrypts text using RSA certificate previously generated",
+        "parameters": [
+          {
+            "in": "path",
+            "description": "RSA ID of certificate generated",
+            "name": "id",
+            "schema": {
+              "required": true,
+              "type": "path",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "description": "ID from certification creation"
+                }
+              }
+            }
+          },
+          {
+            "in": "body",
+            "description": "RSA Private Key",
+            "name": "RSA Encryption",
+            "schema": {
+              "required": ["text"],
+              "type": "object",
+              "properties": {
+                "text": {
+                  "type": "string",
+                  "description": "Text to encrypt"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Encryption Informatiom",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "encrypted": { "type": "string" }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
