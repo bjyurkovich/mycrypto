@@ -2,7 +2,7 @@
 
 # RSA
 
-`POST http://localhost:9900/v1/rsa-create-certificates`
+`POST https://bjcrypto.herokuapp.com/v1/rsa-create-certificates`
 
 ```json
 {
@@ -12,7 +12,7 @@
 }
 ```
 
-`POST http://localhost:9900/v1/rsa-encrypt/id`
+`POST https://bjcrypto.herokuapp.com/v1/rsa-encrypt/id`
 
 ```json
 {
@@ -22,7 +22,7 @@
 
 # AES
 
-`http://localhost:9900/v1/aes-test/`
+`https://bjcrypto.herokuapp.com/v1/aes-test/`
 
 ```json
 {
