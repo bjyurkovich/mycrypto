@@ -1,0 +1,26 @@
+{
+  "name": "mycrypto",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bjyurkovich/mycrypto.git"
+  },
+  "author": "bjyurkovich",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bjyurkovich/mycrypto/issues"
+  },
+  "homepage": "https://github.com/bjyurkovich/mycrypto#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "morgan": "^1.9.1",
+    "openpgp": "^4.1.0"
+  }
+}
