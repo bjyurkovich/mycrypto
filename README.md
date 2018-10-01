@@ -1,6 +1,6 @@
 # mycrypto
 
-Swagger: (https://bjcrypto.herokuapp.com/)[https://bjcrypto.herokuapp.com/]
+Swagger: [https://bjcrypto.herokuapp.com/](https://bjcrypto.herokuapp.com/)
 
 # RSA
 
